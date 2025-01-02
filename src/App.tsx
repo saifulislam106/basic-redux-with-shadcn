@@ -1,7 +1,10 @@
 
 
 // import { Button } from './components/ui/button';
+import { Outlet } from 'react-router-dom';
 import Navbar from './components/ui/layout/Navbar';
+
+
 // import { decrement, increment } from './redux/feature/counter/counterSlice';
 // import { useAppDispatch, useAppSelector } from './redux/hook';
 
@@ -26,6 +29,7 @@ function App() {
       </div> */}
       <div className='container mx-auto'>
         <Navbar/>
+        <Outlet/>
       </div>
     </>
   );
