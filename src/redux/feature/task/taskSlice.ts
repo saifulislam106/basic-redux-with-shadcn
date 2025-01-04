@@ -17,6 +17,14 @@ const initialState: InitialState = {
       isCompleted: true,
       priroty: "High",
     },
+    {
+      id: "asfd",
+      title: "Shascn",
+      description: "Shadcn is most useable style framework",
+      dueDate: "25-01-01",
+      isCompleted: true,
+      priroty: "medium",
+    },
   ],
   filter: "all",
 };

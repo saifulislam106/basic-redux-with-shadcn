@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-between">
       <h3 className="font-bold text-3xl">
         Redux<span className="text-gray-500">Shadcn</span>
       </h3>
