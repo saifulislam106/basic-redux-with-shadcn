@@ -4,8 +4,8 @@ export interface ITask {
   description: string;
   dueDate: string;
   isCompleted: boolean;
-  priroty: "high" | "low" | "medium";
-  assignTo: string | null;
+  priority: "high" | "low" | "medium";
+  // assignTo: string | null;
 }
 
 export interface IUser {

@@ -25,9 +25,9 @@ function TasksCard({ task }: IProps) {
       <div className="flex gap-3 items-center">
         <div
           className={cn("size-3 rounded-full", {
-            "bg-green-500": task.priroty === "low",
-            "bg-yellow-500": task.priroty === "medium",
-            "bg-red-500": task.priroty === "high",
+            "bg-green-500": task.priority === "low",
+            "bg-yellow-500": task.priority === "medium",
+            "bg-red-500": task.priority === "high",
           })}
         ></div>
         <div>

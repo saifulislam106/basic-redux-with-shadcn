@@ -32,6 +32,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { useCreateTasksMutation } from "@/redux/api/baseApi";
 // import { addTask } from "@/redux/feature/task/taskSlice";
 // import { selectUser } from "@/redux/feature/user/userSilce";
 // import { useAppDispatch, useAppSelector } from "@/redux/hook";
@@ -42,14 +43,24 @@ import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 export function TasksModal() {
-  const[open , setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const form = useForm();
+
+  const [createTask, { data }] = useCreateTasksMutation();
+  console.log(data);
+
   // const users = useAppSelector(selectUser);
   // const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
-    setOpen(false)
+    const taskData = {
+      ...data,
+      isCompleted: false,
+    };
+    const res = createTask(taskData).unwrap();
+    console.log("res", res);
+    setOpen(false);
+    form.reset();
     // dispatch(addTask(data as ITask));
   };
 
@@ -135,7 +146,7 @@ export function TasksModal() {
 
             <FormField
               control={form.control}
-              name="priroty"
+              name="priority"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Priority</FormLabel>
@@ -158,7 +169,7 @@ export function TasksModal() {
               )}
             />
 
-            <FormField
+            {/* <FormField
               control={form.control}
               name="assignTo"
               render={({ field }) => (
@@ -174,14 +185,14 @@ export function TasksModal() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {/* {users.map((user) => (
+                      {users.map((user) => (
                         <SelectItem value={user.id}>{user.name}</SelectItem>
-                      ))} */}
+                      ))}
                     </SelectContent>
                   </Select>
                 </FormItem>
               )}
-            />
+            /> */}
             <DialogFooter className="mt-4">
               <Button type="submit">Submit</Button>
             </DialogFooter>
