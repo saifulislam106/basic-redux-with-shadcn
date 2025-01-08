@@ -32,10 +32,10 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { addTask } from "@/redux/feature/task/taskSlice";
-import { selectUser } from "@/redux/feature/user/userSilce";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
-import { ITask } from "@/types/taskTypes";
+// import { addTask } from "@/redux/feature/task/taskSlice";
+// import { selectUser } from "@/redux/feature/user/userSilce";
+// import { useAppDispatch, useAppSelector } from "@/redux/hook";
+// import { ITask } from "@/types/taskTypes";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
@@ -44,13 +44,13 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 export function TasksModal() {
   const[open , setOpen] = useState(false)
   const form = useForm();
-  const users = useAppSelector(selectUser);
-  const dispatch = useAppDispatch();
+  // const users = useAppSelector(selectUser);
+  // const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
     setOpen(false)
-    dispatch(addTask(data as ITask));
+    // dispatch(addTask(data as ITask));
   };
 
   return (
@@ -174,9 +174,9 @@ export function TasksModal() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {users.map((user) => (
+                      {/* {users.map((user) => (
                         <SelectItem value={user.id}>{user.name}</SelectItem>
-                      ))}
+                      ))} */}
                     </SelectContent>
                   </Select>
                 </FormItem>

@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { addUser } from "@/redux/feature/user/userSilce";
-import { useAppDispatch } from "@/redux/hook";
-import { IUser } from "@/types/taskTypes";
+// import { addUser } from "@/redux/feature/user/userSilce";
+// import { useAppDispatch } from "@/redux/hook";
+// import { IUser } from "@/types/taskTypes";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
@@ -13,12 +13,13 @@ function UserModal() {
   const [open , setOpen]= useState(false)
     const form = useForm()
 
-    const dispatch = useAppDispatch()
+    // const dispatch = useAppDispatch()
 
     const onSubmit :SubmitHandler<FieldValues> =(data)=>{
       setOpen(false);
+      console.log(data);
       
-        dispatch(addUser(data as IUser ))
+        // dispatch(addUser(data as IUser ))
     }
     return (
         <Dialog open={open} onOpenChange={setOpen}>

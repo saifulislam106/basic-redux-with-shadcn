@@ -1,11 +1,11 @@
-import UserCard from "@/modules/users/userCard";
+// import UserCard from "@/modules/users/userCard";
 import UserModal from "@/modules/users/userModal";
-import { selectUser } from "@/redux/feature/user/userSilce";
-import { useAppSelector } from "@/redux/hook";
+// import { selectUser } from "@/redux/feature/user/userSilce";
+// import { useAppSelector } from "@/redux/hook";
 
 function Users() {
 
-    const users = useAppSelector(selectUser)
+    // const users = useAppSelector(selectUser)
 
 
   return (
@@ -16,9 +16,9 @@ function Users() {
           <UserModal/>
         </div>
       </div>
-      {users.map((user) => (
+      {/* {users.map((user) => (
         <UserCard user={user} key={user.id}></UserCard>
-      ))}
+      ))} */}
     </div>
   );
 }
